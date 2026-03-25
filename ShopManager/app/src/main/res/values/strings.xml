@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shop Manager</string>
+    <string name="create_bill">Create Bill</string>
+    <string name="progress">Progress</string>
+    <string name="products">Products / Parts</string>
+    <string name="bills">Bills</string>
+    <string name="switch_shop">Switch Shop</string>
+</resources>

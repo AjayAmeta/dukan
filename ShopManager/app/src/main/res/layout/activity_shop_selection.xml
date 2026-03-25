@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/colorPrimary">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="220dp"
+        android:gravity="center" android:orientation="vertical"
+        android:paddingTop="40dp" android:paddingBottom="24dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🏪" android:textSize="64sp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Shop Manager" android:textSize="28sp" android:textStyle="bold"
+            android:textColor="@color/white" android:layout_marginTop="12dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Select or create your shop" android:textSize="14sp"
+            android:textColor="#CCffffff" android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="24dp" app:cardElevation="8dp"
+        android:layout_marginTop="-16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:padding="20dp"
+            android:background="@color/surface">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCreateShop"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="+ Create New Shop" android:textSize="16sp"
+                app:cornerRadius="12dp" />
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="— or select existing shop —"
+                android:textColor="@color/textSecondary" android:gravity="center"
+                android:layout_marginTop="16dp" android:layout_marginBottom="8dp" android:textSize="13sp"/>
+
+            <TextView android:id="@+id/tvNoShops"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="No shops yet. Create one above!"
+                android:gravity="center" android:textColor="@color/textSecondary"
+                android:padding="24dp" android:visibility="gone"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerShops"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:clipToPadding="false" android:paddingBottom="16dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

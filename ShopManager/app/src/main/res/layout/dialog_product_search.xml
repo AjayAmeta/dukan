@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="16dp">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Search products..." android:layout_marginBottom="12dp"
+        app:startIconDrawable="@android:drawable/ic_menu_search"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <EditText android:id="@+id/etProductSearch"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView android:id="@+id/tvSearchEmpty"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="No products found" android:gravity="center"
+        android:padding="24dp" android:textColor="#999999" android:visibility="gone"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProductSearch"
+        android:layout_width="match_parent" android:layout_height="300dp"/>
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/surface">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabBills"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        app:tabGravity="fill" app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabIndicatorColor="@color/colorPrimary"
+        android:background="@color/white" app:tabTextAppearance="@android:style/TextAppearance.Small">
+        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="This Month"/>
+        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Saved"/>
+        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Drafts"/>
+        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="All Bills"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Filter Row -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="12dp" android:background="@color/white">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFilterDate"
+            android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+            android:text="📅 By Date" android:textSize="12sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="8dp" android:layout_marginEnd="4dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFilterMonth"
+            android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+            android:text="📆 By Month" android:textSize="12sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="8dp" android:layout_marginHorizontal="4dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearFilter"
+            android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+            android:text="✕ Clear" android:textSize="12sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="8dp" android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <!-- Summary -->
+    <TextView android:id="@+id/tvTotalCount"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="0 bills | Total: ₹0.00"
+        android:textColor="@color/colorPrimary" android:textStyle="bold"
+        android:paddingHorizontal="16dp" android:paddingVertical="8dp"
+        android:background="@color/surface"/>
+
+    <TextView android:id="@+id/tvNoBills"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="No bills found." android:gravity="center" android:padding="32dp"
+        android:textColor="@color/textSecondary" android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBills"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:padding="8dp" android:clipToPadding="false"/>
+</LinearLayout>

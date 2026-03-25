@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_create_bill">
+    <fragment android:id="@+id/nav_create_bill" android:name="com.shopmanager.ui.CreateBillFragment" android:label="Create Bill" />
+    <fragment android:id="@+id/nav_progress" android:name="com.shopmanager.ui.ProgressFragment" android:label="Progress" />
+    <fragment android:id="@+id/nav_products" android:name="com.shopmanager.ui.ProductsFragment" android:label="Products / Parts" />
+    <fragment android:id="@+id/nav_bills" android:name="com.shopmanager.ui.BillsFragment" android:label="Bills" />
+</navigation>
